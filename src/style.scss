@@ -37,6 +37,7 @@ main {
         font-size: 1.3rem;
         color: $darkTextColor;
       }
+
       img {
         margin-left: auto;
         margin-right: 10px;
@@ -50,6 +51,7 @@ main {
 
       #input-section {
         position: relative;
+        
         > input {
           width: 100%;
           appearance: none;
