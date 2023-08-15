@@ -1,5 +1,5 @@
 $textColor: #767676;
-$darkTextColor:#565656;
+$darkTextColor: #565656;
 $borderColor: #bfc0c1;
 $fontFamily: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -27,26 +27,51 @@ main {
     border: $borderColor solid 1px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 
-    #list-title {
-      margin: 15px 10px;
-      font-weight: 300;
-      font-size: 1.3rem;
-      color: $darkTextColor;
+    #list-header {
+      display: flex;
+      align-items: center;
+
+      #list-title {
+        margin: 15px 10px;
+        font-weight: 300;
+        font-size: 1.3rem;
+        color: $darkTextColor;
+      }
+      img {
+        margin-left: auto;
+        margin-right: 10px;
+        height: 15px;
+      }
     }
 
-    #todos-content {
+    #tasks-content {
       display: flex;
       flex-direction: column;
 
-      > input {
-        width: 100%;
-        appearance: none;
-        border: $borderColor solid 1px;
-        padding: 15px 10px;
+      #input-section {
+        position: relative;
+        > input {
+          width: 100%;
+          appearance: none;
+          border: $borderColor solid 1px;
+          padding: 15px 10px;
+        }
+
+        img {
+          position: absolute;
+          height: 7px;
+          right: 15px;
+          top: 20px;
+        }
+
+        > input::placeholder {
+          font-style: italic;
+          font-size: 0.8rem;
+        }
       }
 
-      #todos-section {
-        .todo-item {
+      #tasks-section {
+        .task-item {
           gap: 5px;
           padding: 15px 10px;
           display: flex;
@@ -56,19 +81,30 @@ main {
           align-items: center;
           height: 50px;
 
-          textarea {
-            display: none;
-            height: 20px;
-            border-style: none;
-            word-wrap: break-word;
-            color: $textColor;
-            outline: none;
-            resize: none;
-            background: transparent;
-            box-shadow: none;
-            overflow: hidden;
-            appearance: none;
-            vertical-align: middle;
+          div {
+            textarea,
+            label {
+              height: 20px;
+              font-size: 0.8rem;
+              border-style: none;
+              word-wrap: break-word;
+              color: $textColor;
+              outline: none;
+              resize: none;
+              background: transparent;
+              box-shadow: none;
+              overflow: hidden;
+              appearance: none;
+              vertical-align: middle;
+            }
+
+            textarea {
+              display: none;
+            }
+
+            textarea.show {
+              display: block;
+            }
           }
 
           img {

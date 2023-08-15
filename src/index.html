@@ -8,15 +8,17 @@
   <body>
     <main>
       <article id="list-wrapper">
-        <h1 id="list-title">List Title Here</h1>
-        <section id="todos-content">
-          <input type="text" placeholder="add to your list..." />
-          <ul id="todos-section">
-            <li class="todo-item">
-              <input type="checkbox" />
-              <textarea>this is a todo item</textarea>
-              <img class="drag-btn" alt="drag and drop button" />
-            </li>
+        <div id="list-header">
+          <h1 id="list-title">Today's To Dos</h1>
+          <img id="icon-arrows" alt="icon arrows" />
+        </div>
+        <section id="tasks-content">
+          <div id="input-section">
+            <input type="text" placeholder="Add to your list..." />
+            <img id="return-icon" alt="icon arrows" />
+          </div>
+          <ul id="tasks-section">
+            <!-- This is populated dynamically -->
           </ul>
         </section>
         <div id="clear-completed-btn"></div>
