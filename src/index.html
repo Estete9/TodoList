@@ -3,10 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wbpack Exercise</title>
+    <title>TodoList</title>
   </head>
   <body>
-    <h1>Hello webpack!</h1>
-    <h2>this is test again right now?</h2>
+    <main>
+      <article id="list-wrapper">
+        <div id="list-title">
+          <h1>List Title Here</h1>
+        </div>
+        <input type="text" placeholder="todo..." />
+        <section id="todos-section">
+          <div class="todo-item">
+            <input type="checkbox" />
+            <p>this is a todo item</p>
+            <img src="../assets/more_vert.svg" alt="drag and drop button" />
+          </div>
+        </section>
+        <div id="clear-completed-btn"></div>
+      </article>
+    </main>
   </body>
 </html>
