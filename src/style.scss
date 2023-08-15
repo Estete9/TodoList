@@ -1,7 +1,7 @@
 $textColor: #767676;
 $darkTextColor: #565656;
 $borderColor: #bfc0c1;
-$fontFamily: Verdana, Geneva, Tahoma, sans-serif;
+$fontFamily: verdana, geneva, tahoma, sans-serif;
 
 * {
   margin: 0;
@@ -25,7 +25,7 @@ main {
     flex-direction: column;
     width: 100%;
     border: $borderColor solid 1px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
 
     #list-header {
       display: flex;
