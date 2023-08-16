@@ -14,8 +14,7 @@ class Task {
 }
 
 const tasks = [
-  new Task('wash the dishes', false, 0),
-  new Task('complete the ToDo list project', false, 1),
+ 
 ];
 const tasksSection = document.getElementById('tasks-section');
 
