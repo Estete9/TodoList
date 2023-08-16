@@ -1,5 +1,4 @@
 import './style.css';
-
 import iconArrows from '../assets/arrow-cycle.svg';
 import returnIcon from '../assets/return-icon.svg';
 import ToDoCollection from './crudFunctions.js';
@@ -26,6 +25,7 @@ const tasksCollection = new ToDoCollection(tasks);
 taskInput.addEventListener('keypress', (e) => {
   if (e.keyCode === 13) {
     tasksCollection.add(taskInput.value);
+    taskInput.value = '';
   }
 });
 console.log(`this is task collection task list ${tasksCollection.tasksList}`);
