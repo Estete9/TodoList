@@ -2,21 +2,22 @@ import './style.css';
 import dragBtnSvg from '../assets/more_vert.svg';
 import iconArrows from '../assets/arrow-cycle.svg';
 import returnIcon from '../assets/return-icon.svg';
+import ToDoCollection from './crudFunctions.js';
 
 document.getElementById('icon-arrows').src = iconArrows;
 document.getElementById('return-icon').src = returnIcon;
-// class Task {
-//   constructor(description, completed, index) {
-//     this.description = description;
-//     this.completed = completed;
-//     this.index = index;
-//   }
-// }
 
-const tasks = [
-
-];
+const taskInput = document.querySelector('#input-section > input');
+const tasks = [];
 const tasksSection = document.getElementById('tasks-section');
+const tasksCollection = new ToDoCollection(tasks);
+
+taskInput.addEventListener('keypress', (e) => {
+  console.log('enter is hit')
+  if (e.keyCode === 13) {
+    tasksCollection.add(taskInput.value);
+  }
+});
 
 for (let i = 0; i < tasks.length; i += 1) {
   const task = document.createElement('li');
