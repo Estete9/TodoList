@@ -1,8 +1,120 @@
-*{
+$textColor: #767676;
+$darkTextColor: #565656;
+$borderColor: #bfc0c1;
+$fontFamily: verdana, geneva, tahoma, sans-serif;
+
+* {
   margin: 0;
   padding: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  font-family: $fontFamily;
 }
-body {
-  
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 68px 15%;
+  background-color: #f6f6f6;
+
+  #list-wrapper {
+    background-color: #fff;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: $borderColor solid 1px;
+    box-shadow: 0 2px 8px 0 #00000026;
+
+    #list-header {
+      display: flex;
+      align-items: center;
+
+      #list-title {
+        margin: 15px 10px;
+        font-weight: 300;
+        font-size: 1.3rem;
+        color: $darkTextColor;
+      }
+
+      img {
+        margin-left: auto;
+        margin-right: 10px;
+        height: 15px;
+      }
+    }
+
+    #tasks-content {
+      display: flex;
+      flex-direction: column;
+
+      #input-section {
+        position: relative;
+
+        > input {
+          width: 100%;
+          appearance: none;
+          border: $borderColor solid 1px;
+          padding: 15px 10px;
+        }
+
+        img {
+          position: absolute;
+          height: 7px;
+          right: 15px;
+          top: 20px;
+        }
+
+        > input::placeholder {
+          font-style: italic;
+          font-size: 0.8rem;
+        }
+      }
+
+      #tasks-section {
+        .task-item {
+          gap: 5px;
+          padding: 15px 10px;
+          display: flex;
+          border: $borderColor solid 1px;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          height: 50px;
+
+          div {
+            textarea,
+            label {
+              height: 20px;
+              font-size: 0.8rem;
+              border-style: none;
+              word-wrap: break-word;
+              color: $textColor;
+              outline: none;
+              resize: none;
+              background: transparent;
+              box-shadow: none;
+              overflow: hidden;
+              appearance: none;
+              vertical-align: middle;
+            }
+
+            textarea {
+              display: none;
+            }
+
+            textarea.show {
+              display: block;
+            }
+          }
+
+          img {
+            margin-left: auto;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
 }

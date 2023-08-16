@@ -3,10 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wbpack Exercise</title>
+    <title>TodoList</title>
   <script defer src="/index.bundle.js"></script></head>
   <body>
-    <h1>Hello webpack!</h1>
-    <h2>this is test again right now?</h2>
+    <main>
+      <article id="list-wrapper">
+        <div id="list-header">
+          <h1 id="list-title">Today's To Dos</h1>
+          <img id="icon-arrows" alt="icon arrows" />
+        </div>
+        <section id="tasks-content">
+          <div id="input-section">
+            <input type="text" placeholder="Add to your list..." />
+            <img id="return-icon" alt="icon arrows" />
+          </div>
+          <ul id="tasks-section">
+            <!-- This is populated dynamically -->
+          </ul>
+        </section>
+        <div id="clear-completed-btn"></div>
+      </article>
+    </main>
   </body>
 </html>
