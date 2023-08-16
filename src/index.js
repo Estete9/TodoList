@@ -5,16 +5,16 @@ import returnIcon from '../assets/return-icon.svg';
 
 document.getElementById('icon-arrows').src = iconArrows;
 document.getElementById('return-icon').src = returnIcon;
-class Task {
-  constructor(description, completed, index) {
-    this.description = description;
-    this.completed = completed;
-    this.index = index;
-  }
-}
+// class Task {
+//   constructor(description, completed, index) {
+//     this.description = description;
+//     this.completed = completed;
+//     this.index = index;
+//   }
+// }
 
 const tasks = [
- 
+
 ];
 const tasksSection = document.getElementById('tasks-section');
 
