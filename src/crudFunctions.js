@@ -1,8 +1,18 @@
 import Task from './task.js';
+import updateUI from './updateUI.js';
 
 export default class crudFunctions {
   constructor() {
-    this.tasksList = [];
+    const localData = localStorage.getItem('tasksStorage');
+    let local = [];
+    try {
+      local = JSON.parse(localData);
+      if (local === null) local = [];
+    } catch (error) {
+      console.warn('local storage is empty');
+      local = [];
+    }
+    this.tasksList = local;
   }
 
   makeIndex = () => {
@@ -40,6 +50,7 @@ export default class crudFunctions {
     // push task to array and add to local storage
     this.tasksList.push(task);
     localStorage.setItem('tasksStorage', JSON.stringify(this.tasksList));
+    updateUI(this.tasksList);
   };
 
   deleteTask = (event, index) => {
@@ -68,5 +79,6 @@ export default class crudFunctions {
     }
     // add to local storage
     localStorage.setItem('tasksStorage', JSON.stringify(this.tasksList));
+    updateUI(this.tasksList);
   };
 }
