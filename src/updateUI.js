@@ -1,7 +1,8 @@
 import dragBtnSvg from '../assets/more_vert.svg';
 import deleteBtn from '../assets/delete-icon.svg';
+import taskSelection from './taskSelection.js';
 
-const updateTasksList = (tasks) => {
+const updateTasksList = (tasks, tasksCollection) => {
   const tasksSection = document.getElementById('tasks-section');
   tasksSection.innerHTML = '';
   for (let i = 0; i < tasks.length; i += 1) {
@@ -16,6 +17,7 @@ const updateTasksList = (tasks) => {
     task.innerHTML = taskInnerHTML;
     tasksSection.appendChild(task);
   }
+  taskSelection(tasksCollection);
 };
 
 export default updateTasksList;

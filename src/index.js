@@ -25,9 +25,9 @@ const tasksCollection = new ToDoCollection(tasks);
 
 taskInput.addEventListener('keypress', (e) => {
   if (e.keyCode === 13) {
-    tasksCollection.add(taskInput.value);
+    tasksCollection.addTask(taskInput.value, tasksCollection);
     taskInput.value = '';
   }
 });
-updateUI(tasksCollection.tasksList);
+updateUI(tasksCollection.tasksList, tasksCollection);
 taskSelection(tasksCollection);

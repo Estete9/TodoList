@@ -34,7 +34,7 @@ export default class crudFunctions {
     return this.tasksList.length + 1;
   };
 
-  add = (taskDescription) => {
+  addTask = (taskDescription, tasksCollection) => {
     const localData = localStorage.getItem('tasksStorage');
     let local = [];
 
@@ -50,11 +50,11 @@ export default class crudFunctions {
     // push task to array and add to local storage
     this.tasksList.push(task);
     localStorage.setItem('tasksStorage', JSON.stringify(this.tasksList));
-    updateUI(this.tasksList);
+    updateUI(this.tasksList, tasksCollection);
   };
 
-  deleteTask = (event, index) => {
-    const localData = localStorage.getItem('books');
+  deleteTask = (task, tasksCollection) => {
+    const localData = localStorage.getItem('tasksStorage');
     let local = [];
 
     try {
@@ -65,20 +65,16 @@ export default class crudFunctions {
       local = [];
     }
     this.tasksList = local;
-    // locate the index of the deleted task
-    for (let i = 0; i < this.tasksList.length; i += 1) {
-      // remove task and end loop
-      if (i + 1 === index) {
-        this.tasksList.splice(i, 1);
-        break;
-      }
-    }
+    // locate the index of the deleted task with the eventId
+    const index = task.id;
+    // remove the element at index - 1 (-1 to match array index)
+    this.tasksList.splice(index - 1, 1);
     // update array's index and saves to local storage
     for (let i = 0; i < this.tasksList.length; i += 1) {
       this.tasksList[i].index = i + 1;
     }
     localStorage.setItem('tasksStorage', JSON.stringify(this.tasksList));
-    updateUI(this.tasksList);
+    updateUI(this.tasksList, tasksCollection);
   };
 
   updateTask = (task) => {
