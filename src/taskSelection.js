@@ -1,4 +1,4 @@
-const highlightSelection = (tasksCollection) => {
+const taskSelection = (tasksCollection) => {
   Array.from(document.getElementsByTagName('textarea')).forEach((textarea) => {
     textarea.addEventListener('focus', (e) => {
       const listItem = e.target.parentNode;
@@ -29,4 +29,4 @@ const highlightSelection = (tasksCollection) => {
   });
 };
 
-export default highlightSelection;
+export default taskSelection;
