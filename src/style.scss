@@ -27,6 +27,20 @@ main {
     border: $borderColor solid 1px;
     box-shadow: 0 2px 8px 0 #00000026;
 
+    #clear-completed-btn {
+      height: 50px;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      justify-self: center;
+      align-items: center;
+      color: $textColor;
+    }
+
+    #clear-completed-btn:hover {
+      cursor: pointer;
+    }
+
     #list-header {
       display: flex;
       align-items: center;
@@ -115,6 +129,7 @@ main {
 
           #drag-btn {
             display: none;
+            cursor: move;
           }
 
           #delete-btn.show {
@@ -123,6 +138,10 @@ main {
 
           #drag-btn.show {
             display: block;
+          }
+
+          .checkbox:hover {
+            cursor: pointer;
           }
         }
 
