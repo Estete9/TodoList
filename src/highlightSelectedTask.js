@@ -1,4 +1,4 @@
-const highlightSelection = () => {
+const highlightSelection = (tasksCollection) => {
   Array.from(document.getElementsByTagName('textarea')).forEach((textarea) => {
     textarea.addEventListener('focus', (e) => {
       const listItem = e.target.parentNode;
@@ -16,6 +16,15 @@ const highlightSelection = () => {
       dragBtn.classList.add('show');
       deleteBtn.classList.remove('show');
       listItem.classList.remove('selected');
+      // update task content
+      tasksCollection.updateTask(e.target);
+    });
+
+    textarea.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        e.target.blur();
+      }
     });
   });
 };

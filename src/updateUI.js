@@ -9,7 +9,7 @@ const updateTasksList = (tasks) => {
     task.classList.add('task-item');
     const taskInnerHTML = `
     <input type="checkbox" />
-      <textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${tasks[i].description}</textarea>
+      <textarea id='${i + 1}' oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${tasks[i].description}</textarea>
     <img id="drag-btn" class="show" src="${dragBtnSvg}" class="drag-btn" alt="drag and drop button" />
     <img id="delete-btn" src="${deleteBtn}" class="drag-btn" alt="drag and drop button" />
   `;

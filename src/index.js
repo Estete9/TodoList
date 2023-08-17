@@ -29,6 +29,5 @@ taskInput.addEventListener('keypress', (e) => {
     taskInput.value = '';
   }
 });
-console.log(`this is task collection task list ${tasksCollection.tasksList}`);
 updateUI(tasksCollection.tasksList);
-highlightSelected();
+highlightSelected(tasksCollection);

@@ -73,12 +73,19 @@ export default class crudFunctions {
         break;
       }
     }
-    // update array's index
+    // update array's index and saves to local storage
     for (let i = 0; i < this.tasksList.length; i += 1) {
       this.tasksList[i].index = i + 1;
     }
-    // add to local storage
     localStorage.setItem('tasksStorage', JSON.stringify(this.tasksList));
     updateUI(this.tasksList);
+  };
+
+  updateTask = (task) => {
+    // save changes to task, update task in the array and save to local storage
+    console.log(`this is task.textContent: ${task.textContent}`);
+    const updatedTask = new Task(task.textContent, task.id);
+    this.tasksList[task.id - 1] = updatedTask;
+    localStorage.setItem('tasksStorage', JSON.stringify(this.tasksList));
   };
 }
