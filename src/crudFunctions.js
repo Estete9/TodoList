@@ -111,16 +111,10 @@ export default class crudFunctions {
 
   updateTask = (task) => {
     // save changes to task, update task in the array and save to local storage
-    // if (task.value === task.textContent) {
-    //   return;
-    // }
-    // if()
-    // if (task.value !== task.textContent) {
     const updatedTask = new Task(task.value, task.id);
 
     this.tasksList[task.id - 1] = updatedTask;
 
     localStorage.setItem('tasksStorage', JSON.stringify(this.tasksList));
-    // }
   };
 }
