@@ -104,6 +104,22 @@ main {
             margin-left: auto;
             height: 20px;
           }
+
+          #delete-btn {
+            display: none;
+          }
+
+          #drag-btn {
+            display: none;
+          }
+
+          #delete-btn.show {
+            display: block;
+          }
+
+          #drag-btn.show {
+            display: block;
+          }
         }
 
         .task-item.selected {
