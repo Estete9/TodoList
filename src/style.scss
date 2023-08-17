@@ -74,45 +74,56 @@ main {
 
       #tasks-section {
         .task-item {
+          padding: 0 15px;
           gap: 5px;
-          padding: 15px 10px;
           display: flex;
           border: $borderColor solid 1px;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          height: 50px;
 
-          div {
-            textarea,
-            label {
-              height: 20px;
-              font-size: 0.8rem;
-              border-style: none;
-              word-wrap: break-word;
-              color: $textColor;
-              outline: none;
-              resize: none;
-              background: transparent;
-              box-shadow: none;
-              overflow: hidden;
-              appearance: none;
-              vertical-align: middle;
-            }
-
-            textarea {
-              display: none;
-            }
-
-            textarea.show {
-              display: block;
-            }
+          textarea {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            height: auto;
+            width: 100%;
+            font-size: 0.8rem;
+            border-style: none;
+            word-wrap: break-word;
+            color: $textColor;
+            outline: none;
+            resize: none;
+            background: transparent;
+            box-shadow: none;
+            overflow: hidden;
+            appearance: none;
+            vertical-align: middle;
           }
 
           img {
             margin-left: auto;
             height: 20px;
           }
+
+          #delete-btn {
+            display: none;
+          }
+
+          #drag-btn {
+            display: none;
+          }
+
+          #delete-btn.show {
+            display: block;
+          }
+
+          #drag-btn.show {
+            display: block;
+          }
+        }
+
+        .task-item.selected {
+          background-color: lightyellow;
         }
       }
     }

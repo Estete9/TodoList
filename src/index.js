@@ -1,35 +1,34 @@
-import './style.css';
-import dragBtnSvg from '../assets/more_vert.svg';
-import iconArrows from '../assets/arrow-cycle.svg';
-import returnIcon from '../assets/return-icon.svg';
+import './style.css';
+import iconArrows from '../assets/arrow-cycle.svg';
+import returnIcon from '../assets/return-icon.svg';
+import ToDoCollection from './crudFunctions.js';
+import updateUI from './updateUI.js';
+import taskSelection from './taskSelection.js';
+
+document.getElementById('icon-arrows').src = iconArrows;
+document.getElementById('return-icon').src = returnIcon;
+
+const taskInput = document.querySelector('#input-section > input');
+const localData = localStorage.getItem('tasksStorage');
+let tasks = [];
+let local = [];
+
+try {
+  local = JSON.parse(localData);
+  if (local === null) local = [];
+} catch (error) {
+  console.warn('local storage is empty');
+  local = [];
+}
+tasks = local;
+const tasksCollection = new ToDoCollection(tasks);
+
+taskInput.addEventListener('keypress', (e) => {
+  if (e.keyCode === 13) {
+    tasksCollection.addTask(taskInput.value, tasksCollection);
+    taskInput.value = '';
+  }
+});
+updateUI(tasksCollection.tasksList, tasksCollection);
+taskSelection(tasksCollection);
 
-document.getElementById('icon-arrows').src = iconArrows;
-document.getElementById('return-icon').src = returnIcon;
-class Task {
-  constructor(description, completed, index) {
-    this.description = description;
-    this.completed = completed;
-    this.index = index;
-  }
-}
-
-const tasks = [
-  new Task('wash the dishes', false, 0),
-  new Task('complete the ToDo list project', false, 1),
-];
-const tasksSection = document.getElementById('tasks-section');
-
-for (let i = 0; i < tasks.length; i += 1) {
-  const task = document.createElement('li');
-  task.classList.add('task-item');
-  const taskInnerHTML = `
-    <input type="checkbox" />
-    <div>
-      <label class="label">${tasks[i].description}</label>
-      <textarea>${tasks[i].description}</textarea>
-    </div>
-    <img src="${dragBtnSvg}" class="drag-btn" alt="drag and drop button" />
-  `;
-  task.innerHTML = taskInnerHTML;
-  tasksSection.appendChild(task);
-}
