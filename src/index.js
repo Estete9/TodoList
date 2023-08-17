@@ -3,6 +3,7 @@ import iconArrows from '../assets/arrow-cycle.svg';
 import returnIcon from '../assets/return-icon.svg';
 import ToDoCollection from './crudFunctions.js';
 import updateUI from './updateUI.js';
+import highlightSelected from './highlightSelectedTask.js';
 
 document.getElementById('icon-arrows').src = iconArrows;
 document.getElementById('return-icon').src = returnIcon;
@@ -30,3 +31,4 @@ taskInput.addEventListener('keypress', (e) => {
 });
 console.log(`this is task collection task list ${tasksCollection.tasksList}`);
 updateUI(tasksCollection.tasksList);
+highlightSelected();

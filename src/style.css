@@ -13,7 +13,6 @@ main {
   padding: 68px 15%;
   background-color: #f6f6f6;
 }
-
 main #list-wrapper {
   background-color: #fff;
   margin-bottom: auto;
@@ -21,69 +20,60 @@ main #list-wrapper {
   flex-direction: column;
   width: 100%;
   border: #bfc0c1 solid 1px;
-  box-shadow: 0 2px 8px 0 #00000026;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1490196078);
 }
-
 main #list-wrapper #list-header {
   display: flex;
   align-items: center;
 }
-
 main #list-wrapper #list-header #list-title {
   margin: 15px 10px;
   font-weight: 300;
   font-size: 1.3rem;
   color: #565656;
 }
-
 main #list-wrapper #list-header img {
   margin-left: auto;
   margin-right: 10px;
   height: 15px;
 }
-
 main #list-wrapper #tasks-content {
   display: flex;
   flex-direction: column;
 }
-
 main #list-wrapper #tasks-content #input-section {
   position: relative;
 }
-
 main #list-wrapper #tasks-content #input-section > input {
   width: 100%;
   appearance: none;
   border: #bfc0c1 solid 1px;
   padding: 15px 10px;
 }
-
 main #list-wrapper #tasks-content #input-section img {
   position: absolute;
   height: 7px;
   right: 15px;
   top: 20px;
 }
-
 main #list-wrapper #tasks-content #input-section > input::placeholder {
   font-style: italic;
   font-size: 0.8rem;
 }
-
 main #list-wrapper #tasks-content #tasks-section .task-item {
+  padding: 0 15px;
   gap: 5px;
-  padding: 15px 10px;
   display: flex;
   border: #bfc0c1 solid 1px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 50px;
 }
-
-main #list-wrapper #tasks-content #tasks-section .task-item div textarea,
-main #list-wrapper #tasks-content #tasks-section .task-item div label {
-  height: 20px;
+main #list-wrapper #tasks-content #tasks-section .task-item textarea {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: auto;
+  width: 100%;
   font-size: 0.8rem;
   border-style: none;
   word-wrap: break-word;
@@ -96,17 +86,10 @@ main #list-wrapper #tasks-content #tasks-section .task-item div label {
   appearance: none;
   vertical-align: middle;
 }
-
-main #list-wrapper #tasks-content #tasks-section .task-item div textarea {
-  display: none;
-}
-
-main #list-wrapper #tasks-content #tasks-section .task-item div textarea.show {
-  display: block;
-}
-
 main #list-wrapper #tasks-content #tasks-section .task-item img {
   margin-left: auto;
   height: 20px;
 }
-/*# sourceMappingURL=style.css.map */
+main #list-wrapper #tasks-content #tasks-section .task-item.selected {
+  background-color: lightyellow;
+}/*# sourceMappingURL=style.css.map */
