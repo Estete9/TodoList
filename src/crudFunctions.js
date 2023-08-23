@@ -4,32 +4,13 @@ import updateUI from './updateUI.js';
 export default class crudFunctions {
   constructor() {
     const localData = localStorage.getItem('tasksStorage');
-    let local = [];
-
-    try {
-      local = JSON.parse(localData);
-
-      if (local === null) local = [];
-    } catch (error) {
-      console.warn('local storage is empty');
-
-      local = [];
-    }
+    const local = JSON.parse(localData) || [];
     this.tasksList = local;
   }
 
   makeIndex = () => {
     const localData = localStorage.getItem('tasksStorage');
-    let local = [];
-
-    try {
-      local = JSON.parse(localData);
-      if (local === null) local = [];
-    } catch (error) {
-      console.warn('local storage is empty');
-
-      local = [];
-    }
+    const local = JSON.parse(localData) || [];
 
     this.tasksList = local;
 
@@ -42,16 +23,7 @@ export default class crudFunctions {
 
   addTask = (taskDescription, tasksCollection) => {
     const localData = localStorage.getItem('tasksStorage');
-
-    let local = [];
-
-    try {
-      local = JSON.parse(localData);
-      if (local === null) local = [];
-    } catch (error) {
-      console.error(`local storage is empty with error: ${error}`);
-      local = [];
-    }
+    const local = JSON.parse(localData) || [];
 
     this.tasksList = local;
     const task = new Task(taskDescription, this.makeIndex(this.tasksList));
@@ -65,17 +37,7 @@ export default class crudFunctions {
 
   deleteTask = (task, tasksCollection) => {
     const localData = localStorage.getItem('tasksStorage');
-    let local = [];
-
-    try {
-      local = JSON.parse(localData);
-      if (local === null) local = [];
-    } catch (error) {
-      console.warn('local storage is empty');
-
-      local = [];
-    }
-
+    const local = JSON.parse(localData) || [];
     this.tasksList = local;
 
     // locate the index of the deleted task with the eventId

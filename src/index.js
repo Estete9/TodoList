@@ -14,17 +14,7 @@ const clearCompletedBtn = document.getElementById('clear-completed-btn');
 const localData = localStorage.getItem('tasksStorage');
 
 let tasks = [];
-let local = [];
-
-try {
-  local = JSON.parse(localData);
-
-  if (local === null) local = [];
-} catch (error) {
-  console.warn('local storage is empty');
-
-  local = [];
-}
+const local = JSON.parse(localData) || [];
 
 tasks = local;
 
