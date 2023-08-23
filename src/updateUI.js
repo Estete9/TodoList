@@ -1,5 +1,4 @@
 import dragBtnSvg from '../assets/more_vert.svg';
-
 import deleteBtn from '../assets/delete-icon.svg';
 
 import taskSelection from './taskSelection.js';
