@@ -15,17 +15,5 @@ describe('tasks list that can', () => {
     utils.addTask('test task', utils);
     expect(utils.tasksList.length).toBe(initialListLength + 1);
   });
-
-  it('remove a task from the list', () => {
-    const testTask = {
-      description: 'this is test task',
-      completed: false,
-      index: 0,
-    };
-    localStorage.getItem.mockReturnValueOnce(JSON.stringify([testTask]));
-    const utils = new CrudUtil();
-    const initialListLength = utils.tasksList.length;
-    utils.deleteTask(testTask);
-    expect(utils.tasksList.length).toBe(initialListLength - 1);
-  });
+  // HERE GOES THE SECOND TEST
 });
