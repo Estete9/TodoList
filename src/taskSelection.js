@@ -13,7 +13,6 @@ const taskSelection = (tasksCollection) => {
       listItem.classList.add('selected');
 
       deleteBtn.addEventListener('mousedown', () => {
-        console.log('erase btn clicked');
         tasksCollection.deleteTask(event.target, tasksCollection);
         uiiUtils.updateTasksList(tasksCollection.tasksList);
       });
