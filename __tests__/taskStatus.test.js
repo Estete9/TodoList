@@ -1,14 +1,15 @@
 import CrudFunctions from '../src/crudFunctions.js';
 import localStorageMock from '../__mocks__/localStorageMock.js';
+import changeStatusMock from '../__mocks__/changeStatus.js';
 
 jest.mock('../__mocks__/localStorageMock.js');
 
-describe('test edit task', () => {
+describe('task status changes', () => {
   beforeEach(() => {
     global.localStorage = localStorageMock;
   });
-
-  it('edit.', () => {
+  it('changed', () => {
+    // arrange
     const tasklist = [
       {
         description: 'task 1',
@@ -22,18 +23,11 @@ describe('test edit task', () => {
       },
     ];
 
-    const initialTask = { value: 'task 1 edited', completed: false, id: 1 };
-
-    const initialTaskComparative = { description: 'task 1 edited', completed: false, index: 1 };
+    const comparativeTask = { description: 'task 1', completed: true, index: 1 };
 
     localStorage.getItem.mockReturnValueOnce(JSON.stringify(tasklist));
-
     const newCollection = new CrudFunctions();
-
-    newCollection.updateTask(initialTask);
-
-    expect(newCollection.tasksList[0].description).toStrictEqual(
-      initialTaskComparative.description,
-    );
+    changeStatusMock(newCollection, comparativeTask);
+    expect(newCollection.tasksList[0].completed).toBe(comparativeTask.completed);
   });
 });
