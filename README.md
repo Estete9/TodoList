@@ -124,6 +124,12 @@ Use your browser's developer tools
 - Twitter: [@NaughTban](https://twitter.com/NaughTban)
 - LinkedIn: [Esteban Palacios](https://www.linkedin.com/in/esteban-palacios-5030a772/)
 
+
+👤 **Alejandro Maggioni**
+
+- GitHub: [@githubhandle](https://github.com/alex1779/)
+- Twitter: [@twitterhandle](https://twitter.com/alex1779)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/alejandro-maggioni-086678b5/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
