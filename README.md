@@ -4,7 +4,7 @@
   <img src="./assets/logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Let's ToDO</b></h3>
+  <h3><b>Todolist - Let's DO</b></h3>
 
 </div>
 
